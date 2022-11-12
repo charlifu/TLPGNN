@@ -8,17 +8,11 @@ import torch.cuda.profiler as profiler
 import scipy.sparse as sp
 from torch.utils.cpp_extension import load_inline
 
-def read_data(data):
-    data_path = "/mnt/raid0_ssd_8tb/qiang/graph_data/" + data + "/"
+def read_data(dataset):
+    data_path = "../data/" + dataset + "/"
     ret = {}
     ret['features'] = np.load(data_path+'features.npy')
-    #ret['labels'] = np.load(data_path+'labels.npy')
-    #ret['train_mask'] = np.load(data_path+'train_mask.npy')
-    #ret['val_mask'] = np.load(data_path+'val_mask.npy')
-    #ret['test_mask'] = np.load(data_path+'test_mask.npy')
     ret['graph'] = sp.load_npz(data_path+'csr.npz').tocsc()
-    #ret['onehot_labels'] = np.load(data_path+'onehot_labels.npy')
-    #ret['num_labels'] = ret['onehot_labels'].shape[1]
     ret['graph'].sort_indices()
     return ret
 
@@ -119,8 +113,6 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("-m", "--model",
-            help="which GNN model to use")
     parser.add_argument("-d", "--dataset",
             default="citeseer",
             help="which graph data set to process")
