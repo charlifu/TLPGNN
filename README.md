@@ -2,11 +2,13 @@
 ---
 Software requirement
 -----
-gcc 8.5
+gcc
 
-CUDA 11.3
+scipy.sparse
 
-Pytorch 1.10
+CUDA (11.3 tested)
+
+Pytorch (1.10 tested)
 
 ---
 Hardware
