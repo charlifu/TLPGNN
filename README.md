@@ -26,7 +26,7 @@ To run TLPGNN on other dataset, please add the data folder under `data/` and pro
 Reference
 -------
 
-If you use iSpan in your project, please cite the following paper.
+If you use TLPGNN in your project, please cite the following paper.
 
 ```python
 @inproceedings{fu2022tlpgnn,
