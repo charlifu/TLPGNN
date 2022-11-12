@@ -18,7 +18,7 @@ Execute
 ------
 ```bash
 cd gcn/
-python test_kernel --dataset citeseer --size 32
+python test_kernel.py --dataset citeseer --size 32
 ```
 To run TLPGNN on other dataset, please add the data folder under `data/` and provide the same data files with our citeseer example.
 
